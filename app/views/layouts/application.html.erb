@@ -7,16 +7,28 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-		<div class="header">
-			<p>Nile</p>
+
+		<div id="header">
+			<br />
+			<table>
+				<tr>
+					<th id="topnile">Nile</th>
+				</tr>
+				<tr>
+					<td>Amazon may be the Largest, but Nile is the LONGEST!</td>
+				</tr>
+			</table>
+			<br />
+			<br />
+			<br />
 			<p align="right">
 				<% if user_signed_in? %>
 					Hi, <%= current_user.email %>
 					<br />
-					<%= button_to "Sign Out", destroy_user_session_path, method:"delete", style:"float: right" %>
+					<%= button_to "Sign Out", destroy_user_session_path, method:"delete", id:"funk" %>
 				<% else %>
 					Not signed in
-					<%= button_to "Sing In", new_user_session_path, method:"get", style:"float: right" %>
+					<%= button_to "Sing In", new_user_session_path, method:"get", id:"funk" %>
 				<% end %>
 			</p>
 		</div>

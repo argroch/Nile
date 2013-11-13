@@ -1,6 +1,20 @@
 <h1>Editing product</h1>
 
-<%= render 'form' %>
+<div style="float:left;width:40%">
+	<%= render 'form' %>
+</div>
 
+<div style="float:left;wdith:60%">
+	<h3>Add Category</h3>
+	<%= form_for( @product_category, url: assign_category_path ) do |f| %>
+		<%= f.hidden_field :product_id, value: @product.id %>
+		<%= f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] } %>
+		<%= f.submit "Add Category" %>
+	<% end %>
+</div>
+
+<div style="clear:both"></div>
+
+<br />
 <%= link_to 'Show', @product %> |
 <%= link_to 'Back', products_path %>

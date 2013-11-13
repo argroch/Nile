@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /products
   # GET /products.json
@@ -17,8 +18,18 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def assign_category
+
+    my_params = params.require(:product_category).permit(:product_id, :category_id)
+
+    product_category = ProductCategory.new(my_params)
+    product_category.save
+    redirect_to edit_product_path(product_category.product_id)
+  end
+
   # GET /products/1/edit
   def edit
+    @product_category = ProductCategory.new
   end
 
   # POST /products

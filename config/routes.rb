@@ -4,6 +4,8 @@ Nile::Application.routes.draw do
 
   resources :products
 
+  post "products/assign_category", :as => :assign_category
+
   root 'products#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
