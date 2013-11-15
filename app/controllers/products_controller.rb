@@ -22,9 +22,13 @@ class ProductsController < ApplicationController
 
     my_params = params.require(:product_category).permit(:product_id, :category_id)
 
-    product_category = ProductCategory.new(my_params)
-    product_category.save
-    redirect_to edit_product_path(product_category.product_id)
+    @product_category = ProductCategory.new(my_params)
+    if @product_category.save
+      redirect_to edit_product_path(@product_category.product_id)
+    else
+      @product = Product.find(@product_category.product_id)
+      render action: 'edit'
+    end
   end
 
   # GET /products/1/edit
@@ -51,6 +55,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    @product_category = ProductCategory.new
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }

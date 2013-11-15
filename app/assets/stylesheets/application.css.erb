@@ -1,21 +1,51 @@
 body{
-  padding-left: 10px;
-  padding-right: 10px;
-}
+  background-image: url(<%= asset_path 'sphinx.jpg' %>);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /*background-size: cover;
+  background-position: absolute;*/
+  -moz-background-size: 100% 100%; 
+	background-size: 100%;
+  /*width:100%;*/
+  padding:0;
+  margin:0;
+ }
 
-#header{
-	background-image: url(<%= asset_path 'giza.jpg' %>);
-	border-radius: 0px 0px 5px 5px;
+.header{
+	/*border-radius: 0px 0px 5px 5px;*/
 	color: #61380B;
 }
 
 #topnile{
 	text-align: left;
 	font-size: 500%;
+	text-shadow: 2px 2px #ffffff;
+}
+
+#tagline {
+	font-size:100%;
+	text-shadow: 2px 2px #ffffff;
+}
+
+#welcome{
+	color:#2EFEF7;
+	text-shadow: 2px 2px #000000;
 }
 
 #funk{
-	color: #B40404;
+	color: #173B0B;
 	float: right;
+}
+
+.middle{
+	background-color: #F6E3CE;
+	color: #173B0B;
+	padding-left:10px;
+	padding-right:10px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#redtext{
+	color:red;
 }
 

@@ -1,0 +1,11 @@
+.leftside{
+	float: left;
+	width: 40%;
+	clear:both;
+}
+
+.rightside{
+	float: left;
+	width: 60%;
+	clear:both;
+}

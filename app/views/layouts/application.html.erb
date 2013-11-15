@@ -8,14 +8,14 @@
 	</head>
 	<body>
 
-		<div id="header">
+		<div class="header">
 			<br />
 			<table>
 				<tr>
 					<th id="topnile">Nile</th>
 				</tr>
 				<tr>
-					<td>Amazon may be the Largest, but Nile is the LONGEST!</td>
+					<td id="tagline">Amazon may be the Largest, but Nile is the LONGEST!</td>
 				</tr>
 			</table>
 			<br />
@@ -23,22 +23,24 @@
 			<br />
 			<p align="right">
 				<% if user_signed_in? %>
-					Hi, <%= current_user.email %>
+					<font id="welcome">Hi, <%= current_user.email %></font>
 					<br />
-					<%= button_to "Sign Out", destroy_user_session_path, method:"delete", id:"funk" %>
+					<%= button_to "Sign Out", destroy_user_session_path, method:"delete", id:"funk"%>
 				<% else %>
 					Not signed in
-					<%= button_to "Sing In", new_user_session_path, method:"get", id:"funk" %>
+					<%= button_to	 "Sing In", new_user_session_path, method:"get", id:"funk" %>
 				<% end %>
 			</p>
 		</div>
 
 		<div>
 			<%= notice %><br />
-			<%= alert %>
+			<%= alert %><br />
 		</div>
 
-		<%= yield %>
-
+		<div class="middle">
+			<br />
+			<%= yield %>
+		</div>
 	</body>
 </html>
