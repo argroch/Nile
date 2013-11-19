@@ -18,17 +18,12 @@
 					<td id="tagline">Amazon may be the Largest, but Nile is the LONGEST!</td>
 				</tr>
 			</table>
-			<br />
-			<br />
-			<br />
 			<p align="right">
 				<% if user_signed_in? %>
-					<font id="welcome">Hi, <%= current_user.email %></font>
-					<br />
+					<font id="welcome">Hi, <%= current_user.email %></font><br />
+					<%= link_to "Product Index", products_path %><br />
+					<%= link_to "Storefront", root_path %><br />
 					<%= button_to "Sign Out", destroy_user_session_path, method:"delete", id:"funk"%>
-				<% else %>
-					Not signed in
-					<%= button_to	 "Sing In", new_user_session_path, method:"get", id:"funk" %>
 				<% end %>
 			</p>
 		</div>
@@ -38,9 +33,8 @@
 			<%= alert %><br />
 		</div>
 
-		<div class="middle">
-			<br />
-			<%= yield %>
-		</div>
+		<br />
+		<%= yield %>
+		
 	</body>
 </html>

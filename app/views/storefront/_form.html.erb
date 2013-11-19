@@ -1,0 +1,17 @@
+<%= form_for(@storefront) do |f| %>
+  <% if @storefront.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@storefront.errors.count, "error") %> prohibited this storefront from being saved:</h2>
+
+      <ul>
+      <% @storefront.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

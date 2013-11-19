@@ -1,0 +1,50 @@
+<table id="categorybar">
+	<tr>    	
+    <td ><%= link_to "Apparel", products_path %></td>
+    <td><%= link_to "Books", products_path %></td>
+    <td><%= link_to "Food", products_path %></td>
+    <td><%= link_to "Grooming", products_path %></td>
+    <td><%= link_to "Toys", products_path %></td>
+    <td id="cartsquare"><%= link_to image_tag('emptycart.png', width:"50", height:"50"), products_path %></tr>
+  </tr>
+</table>
+
+<div class="middle">
+	<p>
+  Something goes here and blah blah blah Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+
+  <table class="product-table">
+  	<tr>
+  		<% @products.each do |product| %>
+  			<td><strong><%= product.name %></strong><br />
+  				<%= number_to_currency product.unit_price %><br />
+  				<%= link_to "Click for Description", products_path %><br />
+  				<div>
+						<input type="text" class="quantity" placeholder="How many?" />
+						<button class="add-to-cart-button">Add to Cart</button>
+					</div>
+  			</td>
+  		<% end %>
+  	</tr>
+  </table>
+
+
+
+
+
+  <!--
+		<% @products.each do  |product| %>
+			<div class="product-bubble">
+				<strong><%= product.name %></strong><br />
+				<%= number_to_currency product.unit_price %><br />
+				<%= product.description %><br />
+				<br />
+				<div>
+					<input type="text" class="quantity" placeholder="How many?" />
+					<button class="add-to-cart-button">Add to Cart</button>
+				</div>
+			</div>
+		<% end %>
+	-->
+</div>

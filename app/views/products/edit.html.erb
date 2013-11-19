@@ -1,39 +1,42 @@
-<h1>Editing Product</h1>
+<div class="middle">
+	<p id="pagetitle">Product Info Edit</p>
+	<p>Make changes to this product's details</p>
 
-<div style="float:left;width:40%">
-	<%= render 'form' %>
-</div>
+	<div style="float:left;width:40%">
+		<%= render 'form' %>
+	</div>
 
-<div style="float:left;width:60%">
-	<h3>Assign Category</h3>
-	<%= form_for( @product_category, url: assign_category_path ) do |f| %>
-		<% if @product_category.errors.any? %>
-	    <div id="redtext" id="error_explanation">
-	      <h2><%= pluralize(@product_category.errors.count, "error") %> prohibited this product from being saved:</h2>
+	<div style="float:left;width:60%">
+		<p id="pagetitle">Assign Category</p>
+		<%= form_for( @product_category, url: assign_category_path ) do |f| %>
+			<% if @product_category.errors.any? %>
+		    <div id="redtext" id="error_explanation">
+		      <h2><%= pluralize(@product_category.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-	      <ul>
-	      <% @product_category.errors.full_messages.each do |msg| %>
-	        <li><%= msg %></li>
-	      <% end %>
-	      </ul>
-	    </div>
-	  <% end %>
-		<%= f.hidden_field :product_id, value: @product.id %>
-		<%= f.select :category_id, Category.order('name asc').map { |cat| [cat.name, cat.id] } %>
-		<%= f.submit "Add Category" %>
-		<br />
-		<br />
-		<strong>Categories:</strong><br />
-		<% @product.categories.each do |category| %>
-				<%= category.name %><br />
+		      <ul>
+		      <% @product_category.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+			<%= f.hidden_field :product_id, value: @product.id %>
+			<%= f.select :category_id, Category.order('name asc').map { |cat| [cat.name, cat.id] } %>
+			<%= f.submit "Add Category" %>
+			<br />
+			<br />
+			<p id="pagetitle">Categories:</p>
+			<% @product.categories.each do |category| %>
+					<%= category.name %><br />
+			<% end %>
 		<% end %>
-	<% end %>
 
-	
+		
+	</div>
+
+	<div style="clear:both"></div>
+
+	<br />
+	<%= link_to 'Show', @product %> |
+	<%= link_to 'Back to Products Index', products_path %>
 </div>
-
-<div style="clear:both"></div>
-
-<br />
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>

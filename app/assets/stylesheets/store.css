@@ -1,0 +1,64 @@
+#categorybar {
+	width: 500px;
+	table-layout: fixed;
+}
+
+#categorybar td{
+	width: 150px;
+	overflow: hidden;
+	font-size: 30px;
+	font-style: bold;
+	text-shadow: 2px 2px #000000;
+	text-align: center;
+}
+
+#categorybar a{
+	text-decoration: none;
+}
+
+#categorybar a:link, a:visited{
+	color: #585858;
+}
+
+#categorybar a:hover, a:active{
+	color: white;
+}
+
+#cartsquare {
+	border: 1px dotted red;
+}
+
+.product-bubble {
+	border: dotted 2px black;
+	display: inline-block;
+	border-radius: 15px;
+	background-color: beige;
+	/*width:30%;height: 100px;*/
+	text-align: center;
+	padding: 4px;
+	margin: 4px;
+	min-height:100px;
+	width:22%;	
+}
+
+.product-bubble .description {
+	min-height: 40px;
+	padding: 4px;
+	text-align: center;
+}
+
+.product-table {
+	width: 500px;
+	table-layout: fixed;
+	border-spacing: 5px;
+}
+
+.product-table td{
+	width: 150px;
+	overflow: hidden;
+	text-align: center;
+	border: 1px dotted black;
+	padding: 5px;
+	
+}
+}

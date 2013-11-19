@@ -1,4 +1,8 @@
 Nile::Application.routes.draw do
+  get "store/index"
+  post "store/add_cart"
+  resources :storefront
+
   devise_for :users
   resources :customers
 
@@ -6,7 +10,7 @@ Nile::Application.routes.draw do
 
   post "products/assign_category", :as => :assign_category
 
-  root 'products#index'
+  root 'store#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

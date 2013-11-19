@@ -1,50 +1,52 @@
-<h1>Listing products</h1>
+<div class="middle">
+  <h1>Listing products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>&nbsp;</th>
-      <th>Unit Price</th>
-      <th>&nbsp;</th>
-      <th>Description</th>
-      <th>&nbsp;</th>
-      <th>Quantity</th>
-      <th>&nbsp;</th>
-      <th>SKU</th>
-      <th>&nbsp;</th>
-      <th>Brand</th>
-      <th>&nbsp;</th>
-      <th>Model Number</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody style="text-align:center">
-    <% @products.each do |product| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= link_to product.name, product %></td>
-        <td>&nbsp;</td>
-        <td><%= product.unit_price %></td>
-        <td>&nbsp;</td>
-        <td><%= product.description[0...50] %>...</td>
-        <td>&nbsp;</td>
-        <td><%= product.quantity %></td>
-        <td>&nbsp;</td>
-        <td><%= product.sku %></td>
-        <td>&nbsp;</td>
-        <td><%= product.brand %></td>
-        <td>&nbsp;</td>
-        <td><%= product.model_num %></td>
-        <td>&nbsp;</td>
-        <td><%= link_to 'Edit', edit_product_path(product) %> | <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>&nbsp;</th>
+        <th>Unit Price</th>
+        <th>&nbsp;</th>
+        <th>Description</th>
+        <th>&nbsp;</th>
+        <th>Quantity</th>
+        <th>&nbsp;</th>
+        <th>SKU</th>
+        <th>&nbsp;</th>
+        <th>Brand</th>
+        <th>&nbsp;</th>
+        <th>Model Number</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody style="text-align:center">
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to product.name, product %></td>
+          <td>&nbsp;</td>
+          <td>$<%= '%.2f'%product.unit_price %></td>
+          <td>&nbsp;</td>
+          <td><%= product.description[0...50] %>...</td>
+          <td>&nbsp;</td>
+          <td><%= product.quantity %></td>
+          <td>&nbsp;</td>
+          <td><%= product.sku %></td>
+          <td>&nbsp;</td>
+          <td><%= product.brand %></td>
+          <td>&nbsp;</td>
+          <td><%= product.model_num %></td>
+          <td>&nbsp;</td>
+          <td><%= link_to 'Edit', edit_product_path(product) %> | <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Product', new_product_path %>
+  <br />
+
+  <%= link_to 'New Product', new_product_path %>
+</div>

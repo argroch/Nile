@@ -4,12 +4,17 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>&nbsp;</th>
       <th>Phone</th>
+      <th>&nbsp;</th>
       <th>Email</th>
+      <th>&nbsp;</th>
       <th>Address1</th>
+      <th>&nbsp;</th>
       <th>Address2</th>
-      <th>City</th>
-      <th>State</th>
+      <th>&nbsp;</th>
+      <th>City, State</th>
+      <th>&nbsp;</th>
       <th>Zip</th>
       <th></th>
       <th></th>
@@ -20,22 +25,26 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= customer.name %></td>
+        <td><%= link_to customer.name, customer %></td>
+        <td>&nbsp;</td>
         <td><%= customer.phone %></td>
+        <td>&nbsp;</td>
         <td><%= customer.email %></td>
+        <td>&nbsp;</td>
         <td><%= customer.address1 %></td>
+        <td>&nbsp;</td>
         <td><%= customer.address2 %></td>
-        <td><%= customer.city %></td>
-        <td><%= customer.state %></td>
+        <td>&nbsp;</td>
+        <td><%= customer.city %>, <%= customer.state %></td>
+        <td>&nbsp;</td>
         <td><%= customer.zip %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>&nbsp;</td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %> | <%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you quite sure about this?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br />
 
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'Add a New Customer', new_customer_path %>
