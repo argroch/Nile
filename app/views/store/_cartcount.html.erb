@@ -1,0 +1,7 @@
+<% if @cart.count <= 0 %>
+	<%= link_to image_tag('emptycart.png', width:"50", height:"50"), products_path %>
+<% else %>
+	<div id="cartstyle">
+		<%= link_to @cart.count, products_path %>
+	</div>
+<% end %>

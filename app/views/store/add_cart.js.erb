@@ -1,3 +1,18 @@
-alert('you got it, chief');
+alert('Thank you for choosing <%= @product_name %>');
 
-$('#cart_msg').html('You have <%= pluralize(@cart.count, "item") %> in your cart.');
+
+$('#cart_msg').html('<%= escape_javascript(render "cart") %>');
+
+$('#cart_count').html('<%= escape_javascript(render "cartcount") %>');
+
+/*
+var html_content = 'You have <%= pluralize(@cart.count, "item") %> in your cart.';
+
+<% @cart.each do |key, value| %>
+	html_content += "<div><%= value [0] %> - <%= value[1] %> - <%= number_to_currency(value[2]) %></div>";
+<% end %>
+
+html_content += "<hr width='20%' align='left' /><div id='cart_total'>Total: <%= number_to_currency(@sum) %></div>"
+
+$('#cart_msg').html(html_content);
+*/

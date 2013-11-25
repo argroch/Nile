@@ -1,0 +1,17 @@
+<% if @cart.count <= 0 %>
+	Your cart is empty.
+<% else %>
+	You have <%= pluralize(@cart.count, "item") %> in your cart. <br />
+	<button id="toggle_cart_button">View</button>
+	<div id="cart_detail_panel">
+		<% @cart.each do |key, value| %>
+			<div>
+				<%= value [0] %> <%= value[1] %> @ <%= number_to_currency(value[2]) %>
+			</div>
+		<% end %>
+		<hr width="20%" align="left" />
+		<div id="cart_total">
+			Total: <%= number_to_currency(@sum) %>
+		</div>
+</div>
+<% end %>
