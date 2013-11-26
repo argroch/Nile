@@ -1,6 +1,6 @@
 class Customer < ActiveRecord::Base
 
-	has_many :orders
+	has_one :order
 
 	validates_presence_of :name
 	validates_presence_of :phone

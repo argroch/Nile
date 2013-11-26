@@ -45,9 +45,9 @@
   </p>
 
 
-  <%= image_tag @product.photo.url %>
-  <%= image_tag @product.photo.url(:medium) %>
-  <%= image_tag @product.photo.url(:thumb) %>
+  <p><%= image_tag @product.image.url %></p>
+  <%= image_tag @product.image.url(:medium) %>
+  <%= image_tag @product.image.url(:thumb) %>
 
 
   <%= link_to 'Edit', edit_product_path(@product) %> |

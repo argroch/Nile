@@ -39,7 +39,9 @@
     <%= f.label :model_num %><br />
     <%= f.text_field :model_num %>
   </div>
-  <%= f.file_field :photo %>
+  <div>
+  <%= f.label :image, "Attach an Image" %><br />
+  <%= f.file_field :image %>
   <div class="actions">
     <%= f.submit %>
   </div>

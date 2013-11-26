@@ -1,0 +1,44 @@
+<div class="middle">
+	<h1>What Peeps Be Buying</h1>
+
+	<table class="order-history-table">
+		<tr>
+			<th class="idnum">Id</th>
+			<th>Customer Information</th>
+			<th>Subtotal</th>
+			<th>Sales Tax</th>
+			<th>Grand Total</th>
+		</tr>
+		<tr><td colspan="5"><hr /></td></tr>
+		
+		<% @orders.each do |order| %>
+
+			<tr class="order-detail" data-id="<%= order.id %>">
+				<td class="idnum"><%= order.id %></td>
+				<td>
+					<%= order.customer.name %><br />
+					<%= raw full_address(order.customer) %>
+				</td>
+				<td><%= number_to_currency(order.sub_total) %></td>
+				<td><%= number_to_currency(order.sales_tax) %></td>
+				<td><%= number_to_currency(order.grand_total) %></td>
+			</tr>
+
+			<tr id="contact_info_<%= order.id %>" class="contact-information">
+				<td colspan="2" valign="top">
+					<strong>Contact Information</strong><br />
+					<%= order.customer.email %><br />
+					<%= order.customer.phone %><br />
+				</td>
+				<td colspan="3" valign="top">
+					<% order.line_items.each do |item| %>
+						<%= item.quantity %> - 
+						<%= item.product.name %> 
+						<%= number_to_currency(item.unit_price) %><br />
+					<% end %>
+				</td>	
+			</tr>
+			<tr><td colspan="5"><hr /></td></tr>
+		<% end %>
+	</table>
+</div>

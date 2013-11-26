@@ -1,4 +1,5 @@
 Nile::Application.routes.draw do
+  get "orders/index"
   get "store/index"
   post "store/add_cart"
 
@@ -14,6 +15,8 @@ Nile::Application.routes.draw do
   root 'store#index'
 
   get "description" => "store#description", as: :product_description
+  
+  get "cart" => "customer#cart", as: :cart
 
   get "products-by-category/:category_name" => "store#index", as: :products_by_category
   

@@ -12,6 +12,7 @@
 		<hr width="20%" align="left" />
 		<div id="cart_total">
 			Total: <%= number_to_currency(@sum) %>
+			<%= link_to "Place Order", new_customer_path %>
 		</div>
 </div>
 <% end %>

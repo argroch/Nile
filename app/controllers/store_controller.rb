@@ -50,5 +50,4 @@ class StoreController < ApplicationController
 
     @sum = Cart.sum_total(@cart)
 	end
-
 end
