@@ -72,6 +72,9 @@ class CustomersController < ApplicationController
           line_item.save
         end
 
+        session.clear
+        # or session[:cart] = {}
+
         format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
         format.json { render action: 'show', status: :created, location: @customer }
       else

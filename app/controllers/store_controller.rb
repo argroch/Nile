@@ -50,4 +50,9 @@ class StoreController < ApplicationController
 
     @sum = Cart.sum_total(@cart)
 	end
+
+  def delete_item
+
+  end
+  
 end
