@@ -1,4 +1,4 @@
-class AddPaperclipFieldsToProducts < ActiveRecord::Migration
+class AddPaperclipFieldsToProduct < ActiveRecord::Migration
 
 	def change
 		add_column :products, :image_file_name, :string

@@ -2,11 +2,11 @@
 	<p id="pagetitle">Product Info Edit</p>
 	<p>Make changes to this product's details</p>
 
-	<div style="float:left;width:40%">
+	<div>
 		<%= render 'form' %>
 	</div>
 
-	<div style="float:left;width:60%">
+	<div>
 		<p id="pagetitle">Assign Category</p>
 		<%= form_for( @product_category, url: assign_category_path ) do |f| %>
 			<% if @product_category.errors.any? %>
