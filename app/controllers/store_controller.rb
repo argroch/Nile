@@ -46,13 +46,19 @@ class StoreController < ApplicationController
 
   	@cart = current_cart
 
-  	Rails.logger.info "CART= #{session[:cart]}"
+  	#Rails.logger.info "CART= #{session[:cart]}"
 
     @sum = Cart.sum_total(@cart)
 	end
 
-  def delete_item
+  def remove_cart_item
+    product_id = params[:product_id].to_i
+    @cart = session[:cart]
+    @cart.delete(product_id)
 
+    #@sum = Cart.sum_total(@cart)
+    
+    redirect_to store_index_path
   end
-  
+
 end

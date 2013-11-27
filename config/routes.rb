@@ -1,7 +1,9 @@
 Nile::Application.routes.draw do
+
   get "orders/index"
   get "store/index"
   post "store/add_cart"
+  delete "store/remove_cart_item"
 
   resources :store
 
