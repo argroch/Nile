@@ -1,8 +1,5 @@
 class Product < ActiveRecord::Base
 
-	#attr_accessible :image
-	#has_attached_file :image, styles: { :medium => "300x300>", :thumb => "100x100>" }
-
 	has_many :line_items
 	has_many :product_categories, :dependent => :destroy
 	has_many :categories, :through => :product_categories
