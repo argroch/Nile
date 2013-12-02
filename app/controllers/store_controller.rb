@@ -61,4 +61,7 @@ class StoreController < ApplicationController
     redirect_to store_index_path
   end
 
+  def description
+
+  end
 end

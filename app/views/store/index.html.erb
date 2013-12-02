@@ -27,7 +27,7 @@
 		<div class="product-bubble">
 			<strong><%= product.name %></strong><br />
 			<%= number_to_currency product.unit_price %><br />
-			<%= link_to "Click for Description", product_description_path(:name => product.id) %><br />
+			<%= link_to "Click for Description", product_description_path(:product_id => product.id) %><br />
 			<div>
 				<input type="text" class="quantity" placeholder="Enter Qty." size="7" />
 	<!-- <input type="hidden" class="product-id" value="<%= product.id %>" /> -->

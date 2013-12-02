@@ -3,6 +3,10 @@
   <p id="pagesubtitle">Please review these product details</p>
 
   <p>
+    <%= image_tag @product.photo.url, :style => "width:100px" %>
+  </p>
+
+  <p>
     <strong>Name:</strong>
     <%= @product.name %>
   </p>
