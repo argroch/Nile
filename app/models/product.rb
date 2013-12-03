@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
 
-	has_attached_file :photo, :default_url => "/images/:style/missing.png"
+	has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 
 	has_many :line_items
 	has_many :product_categories, :dependent => :destroy

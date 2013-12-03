@@ -3,7 +3,9 @@
   <p id="pagesubtitle">Please review these product details</p>
 
   <p>
-    <%= image_tag @product.photo.url, :style => "width:100px" %>
+    <%= image_tag @product.photo.url %>
+    <%= image_tag @product.photo.url(:medium) %>
+    <%= image_tag @product.photo.url(:thumb) %>
   </p>
 
   <p>

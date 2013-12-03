@@ -22,9 +22,10 @@
 	</div>
   </p>
 
-  <div>
+<div>
 	<% @products.each do  |product| %>
 		<div class="product-bubble">
+			<%= image_tag product.photo.url, style:"width:100px", alt:"Product Image" %><br />
 			<strong><%= product.name %></strong><br />
 			<%= number_to_currency product.unit_price %><br />
 			<%= link_to "Click for Description", product_description_path(:product_id => product.id) %><br />
@@ -39,6 +40,6 @@
 			</div>
 		</div>
 	<% end %>
-	</div>
+</div>
 
 
