@@ -9,6 +9,8 @@ gem 'paperclip', "~> 3.0"
 
 gem 'aws-sdk'
 
+gem 'kaminari'
+
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'

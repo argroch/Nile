@@ -1,12 +1,14 @@
 class StoreController < ApplicationController
 
+
   def index
 
     @categories = Category.order('name asc')
 
     category_name = params[:category_name]
     if category_name.blank?
-      @products = Product.all
+      #@products = Product.all
+      @products = Product.order(:name).page(params[:page])
     else
       @products = Category.find_by_name(category_name).products
     end
