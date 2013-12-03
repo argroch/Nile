@@ -78,6 +78,10 @@ Nile::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  config.serve_static_assets = true
+  config.action_dispatch.x_sendfile_header = X-Accel-Redirect
+  config.assets.compile = true
+
   # config/environments/production.rb
   config.paperclip_defaults = {
     :storage => :s3,
