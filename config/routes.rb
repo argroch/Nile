@@ -2,6 +2,7 @@ Nile::Application.routes.draw do
 
   get "orders/index"
   get "store/index"
+  get "store/about_us"
   post "store/add_cart"
   delete "store/remove_cart_item"
 
@@ -21,6 +22,7 @@ Nile::Application.routes.draw do
   get "cart" => "customer#cart", as: :cart
 
   get "products-by-category/:category_name" => "store#index", as: :products_by_category
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

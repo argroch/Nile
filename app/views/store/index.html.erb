@@ -16,31 +16,36 @@
 </div>
 
 <div class="middle">
-	<p>
-  <div id="cart_msg">
-		<%= render 'cart' %>
-	</div>
-  </p>
-
-<div>
-	<% @products.each do  |product| %>
-		<div class="product-bubble">
-			<%= image_tag product.photo.url, style:"width:100px", alt:"Product Image" %><br />
-			<strong><%= product.name %></strong><br />
-			<%= number_to_currency product.unit_price %><br />
-			<%= link_to "Click for Description", product_description_path(:product_id => product.id) %><br />
-			<div>
-				<input type="text" class="quantity" placeholder="Enter Qty." size="7" />
-	<!-- <input type="hidden" class="product-id" value="<%= product.id %>" /> -->
-				<button class="add-to-cart-button" 
-				data-product-id="<%= product.id %>" 
-				data-product-name="<%= product.name %>"
-				data-price="<%= product.unit_price %>"
-				id="button">Add to Cart</button>
-			</div>
+		<p>
+	  <div id="cart_msg">
+			<%= render 'cart' %>
 		</div>
-	<% end %>
+	  </p>
+
+	<div>
+		<% @products.each do  |product| %>
+			<div class="product-bubble">
+				<%= image_tag product.photo.url, style:"width:100px", alt:"Product Image" %><br />
+				<strong><%= product.name %></strong><br />
+				<%= number_to_currency product.unit_price %><br />
+				<%= link_to "Click for Description", product_description_path(:product_id => product.id) %><br />
+				<div>
+					<input type="text" class="quantity" placeholder="Enter Qty." size="7" />
+		<!-- <input type="hidden" class="product-id" value="<%= product.id %>" /> -->
+					<button class="add-to-cart-button" 
+					data-product-id="<%= product.id %>" 
+					data-product-name="<%= product.name %>"
+					data-price="<%= product.unit_price %>"
+					id="button">Add to Cart</button>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<%= paginate @products %>
 </div>
-<%= paginate @products %>
+<div class="footer">
+	<%= link_to "About Us", store_about_us_path%><br />
+	Nile. <%= Time.now.year %> All Rights Reserved.
+</div>
 
 

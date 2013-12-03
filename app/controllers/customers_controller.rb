@@ -70,9 +70,14 @@ class CustomersController < ApplicationController
           line_item.order_id = order.id
 
           line_item.save
+
+          product = Product.find(line_item.product_id);
+          product.quantity -= line_item.quantity;
+          product.save
         end
 
-        session.clear
+        session.delete(:cart)
+        #session.clear
         # or session[:cart] = {}
 
         format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
