@@ -10,7 +10,7 @@ class StoreController < ApplicationController
       #@products = Product.all
       @products = Product.order(:name).page(params[:page])
     else
-      @products = Category.find_by_name(category_name).products
+      @products = Category.find_by_name(category_name).products.order(:name).page(params[:page])
     end
 
   	if session[:cart].nil?
