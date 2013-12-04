@@ -76,6 +76,8 @@ class CustomersController < ApplicationController
           product.save
         end
 
+        Notifier.order_confirmation_email(@customer).deliver
+
         session.delete(:cart)
         #session.clear
         # or session[:cart] = {}
