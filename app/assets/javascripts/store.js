@@ -13,7 +13,7 @@ function initialize() {
 			  var marker = new google.maps.Marker({
 			  	position: myLatlng,
 			  	map: map,
-			  	title:"Hellow World!"
+			  	title:"Hello World!"
 			  });
 			}
 			google.maps.event.addDomListener(window, 'load', initialize);

@@ -78,6 +78,8 @@ Nile::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  config.action_mailer.default_url_options = {host: "nile-cats.herokuapp.com"}
+
   # config/environments/production.rb
   config.paperclip_defaults = {
     :storage => :s3,
@@ -87,4 +89,5 @@ Nile::Application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
+
 end

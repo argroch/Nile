@@ -3,6 +3,13 @@
 <p>
 	Hi <%= @customer.name %>, thank you for your recent order from Nile!
 </p>
+
+<%= render "customers/order_confirmation" %>
+
+<p>
+	Click <%= link_to "here", root_url %> to come back and shop with us!
+</p>
+
 <p>
 Your order will be shipping soon!
 </p>
