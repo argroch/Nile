@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A mock-up of an e-commerce site. Amazon.com is named after the Amazon, the largest river in the world, but my site is named for the Nile River, the LONGEST river in the world.
 
-Things you may want to cover:
+This site was built during my time at Tech Talent South. We decided as a class to sell cat-related items.
 
-* Ruby version
+The site lets the admin sign-in via the '/products' page, where they can add/edit/delete products.
 
-* System dependencies
+In the store, customers can add products to their cart, then click on the cart on the right or click on "Place Order" in the "View" cart drop-down on the left. The customer enters their info, and a final order review page is shown and an e-mail is sent out, as well.
 
-* Configuration
+I utilized such gems as Paperclip and Devise.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+You can see the site live at nile-cats.herokuapp.com
