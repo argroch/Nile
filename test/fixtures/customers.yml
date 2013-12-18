@@ -1,21 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  phone: MyString
-  email: MyString
-  address1: MyString
-  address2: MyString
-  city: MyString
-  state: MyString
-  zip: MyString
+  id: 1
+  name: Yosep Kim
+  phone: 770-670-8573
+  email: yosep@yahoo.com
+  address1: 123 Hello Ave.
+  address2: Ste. 130
+  city: Atlanta
+  state: GA
+  zip: 30312
 
 two:
-  name: MyString
-  phone: MyString
-  email: MyString
-  address1: MyString
-  address2: MyString
-  city: MyString
-  state: MyString
-  zip: MyString
+  id: 2
+  name: Aaron Groch
+  phone: 111-222-3330
+  email: argroch@hotmail.com
+  address1: 345 Yahoo St.
+  address2: 
+  city: Atlanta
+  state: GA
+  zip: 30316

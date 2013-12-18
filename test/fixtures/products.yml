@@ -1,19 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  id: 1
+  name: Hello Kitty
   unit_price: 9.99
-  description: MyText
+  description: Hello Kitty sticker
   quantity: 1
-  sku: MyString
-  brand: MyString
-  model_num: MyString
+  sku: 10001
+  brand: Sanrio
+  model_num: HK123
 
 two:
-  name: MyString
+  id: 2
+  name: Cat Food
   unit_price: 9.99
-  description: MyText
+  description: So yummy!
   quantity: 1
-  sku: MyString
-  brand: MyString
-  model_num: MyString
+  sku: 10002
+  brand: Meow Inc.
+  model_num: MI321

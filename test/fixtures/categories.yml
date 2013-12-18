@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  id: 1
+  name: Toys
 
 two:
-  name: MyString
+  id: 2
+  name: Food
+
+three:
+  id: 3
+  name: Apparel
