@@ -28,7 +28,17 @@
 			<%= alert %><br />
 		</div>
 
-		<br />
+		<div>
+			<table id="categorybar">
+				<tr>
+					<td><%= link_to "All Of It!", store_index_path %></td>
+					<% @categories.each do |cat| %>
+						<td><%= link_to cat.name, products_by_category_path(cat.name) %></td>
+    			<% end %>
+  			</tr>
+			</table>
+		</div>
+
 		<%= yield %>
 		
 	</body>
