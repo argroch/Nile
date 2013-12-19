@@ -4,17 +4,21 @@ class ProductsController < ApplicationController
 
   # GET /products
   # GET /products.json
+
   def index
+    @categories = Category.order('name asc')
     @products = Product.all
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @categories = Category.order('name asc')
   end
 
   # GET /products/new
   def new
+    @categories = Category.order('name asc')
     @product = Product.new
   end
 
@@ -33,6 +37,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @categories = Category.order('name asc')
     @product_category = ProductCategory.new
   end
 

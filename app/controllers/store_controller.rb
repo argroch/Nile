@@ -64,10 +64,11 @@ class StoreController < ApplicationController
   end
 
   def description
-
+    @categories = Category.order('name asc')
+    @product = Product.all
   end
 
-  def contact_us
-
+  def about_us
+    @categories = Category.order('name asc')
   end
 end
