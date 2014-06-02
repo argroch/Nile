@@ -16,7 +16,7 @@
 			<div id="tagline">Amazon may the Largest, but Nile is the LONGEST!</div>
 			<p align="right">
 				<% if user_signed_in? %>
-					<font id="welcome">Hi, <%= current_user.email %></font><br />
+					<span id="welcome">Hi, <%= current_user.email %></span><br />
 					<%= link_to "Product Index", products_path %> | <%= link_to "Orders", orders_index_path %> | <%= link_to "Storefront", root_path %><br />
 					<%= button_to "Sign Out", destroy_user_session_path, method:"delete", id:"funk"%>
 				<% end %>

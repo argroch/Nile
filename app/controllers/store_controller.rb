@@ -65,7 +65,7 @@ class StoreController < ApplicationController
 
   def description
     @categories = Category.order('name asc')
-    @product = Product.all
+    @product = Product.find(params[:id])
   end
 
   def about_us

@@ -15,7 +15,7 @@
 
   <p>
     <strong>Unit Price:</strong>
-    $<%= '%.2f' % @product.unit_price %>
+    <%= number_to_currency(@product.unit_price, :unit => "$") %>
   </p>
 
   <p>

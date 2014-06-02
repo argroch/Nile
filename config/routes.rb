@@ -5,6 +5,7 @@ Nile::Application.routes.draw do
   get "store/about_us"
   post "store/add_cart"
   delete "store/remove_cart_item"
+  get "description" => "store#description", as: :product_description
 
   resources :store
 
@@ -17,7 +18,7 @@ Nile::Application.routes.draw do
 
   root 'store#index'
 
-  get "description" => "store#description", as: :product_description
+
   
   get "cart" => "customer#cart", as: :cart
 
