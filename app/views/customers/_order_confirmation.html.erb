@@ -21,7 +21,7 @@
           <td><%= number_to_currency order.sub_total %></td>
         </tr>
         <tr>
-          <td>Sales Tax (<%= Order.sales_tax %>%): </td>
+          <td>Sales Tax (<%= Order::CURRENT_SALES_TAX %>%): </td>
           <td width="50"></td>
           <td><%= number_to_currency order.sales_tax %></td>
         </tr>

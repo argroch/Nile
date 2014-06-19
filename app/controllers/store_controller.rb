@@ -53,6 +53,7 @@ class StoreController < ApplicationController
     @sum = Cart.sum_total(@cart)
 	end
 
+
   def remove_cart_item
     product_id = params[:product_id].to_i
     @cart = session[:cart]

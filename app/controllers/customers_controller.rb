@@ -2,45 +2,40 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   def cart
-    current_cart = session[:cart]
-        order = Order.new
-        order.customer_id = @customer.id
-        sub_total = Cart.sum_total(current_cart)
-        order.sub_total = sub_total
-        order.sales_tax = sub_total * Order::CURRENT_SALES_TAX
-        order.grand_total = order.sub_total + order.sales_tax
-        order.save
+    @categories = Category.order('name asc')
+    @current_cart = session[:cart]
 
-    current_cart.each do |key, item|
-      line_item = LineItem.new
-      line_item.product_id = key
-      line_item.quantity = item[0]
-      line_item.unit_price = item[2]
-      line_item.line_item_total = line_item.quantity * line_item.unit_price
-      line_item.order_id = order.id
-
-      line_item.save
+    @sub_total = 0.0
+    @current_cart.each do |key, value|
+      @sub_total = @sub_total + value[2]
     end
+    
+    @sales_tax = @sub_total * Order::CURRENT_SALES_TAX
+    @grand_total = @sales_tax + @sub_total
   end
 
   # GET /customers
   # GET /customers.json
   def index
+    @categories = Category.all
     @customers = Customer.all
   end
 
   # GET /customers/1
   # GET /customers/1.json
   def show
+    @categories = Category.all
   end
 
   # GET /customers/new
   def new
+    @categories = Category.all
     @customer = Customer.new
   end
 
   # GET /customers/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /customers

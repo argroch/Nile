@@ -5,9 +5,6 @@ class Order < ActiveRecord::Base
 
 
 	CURRENT_SALES_TAX = 0.06
-	def self.sales_tax
-		return CURRENT_SALES_TAX * 100
-	end
 
 	def self.process_order(customer, current_cart)
 		order = Order.new

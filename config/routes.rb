@@ -20,7 +20,7 @@ Nile::Application.routes.draw do
 
 
   
-  get "cart" => "customer#cart", as: :cart
+  get "cart" => "customers#cart", as: :cart
 
   get "products-by-category/:category_name" => "store#index", as: :products_by_category
 
