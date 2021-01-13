@@ -10,4 +10,4 @@ In the store, customers can add products to their cart, then click on the cart o
 
 I utilized such gems as Paperclip and Devise.
 
-You can see the site live at nile-cats.herokuapp.com
+One of the original trio of apps from my time as a student at Tech Talent South. As with the blog project, you can find something better at the [Tech Talent Store](https://github.com/argroch/techtalentstore) repo, but that, too, is behind the times. Building a more up-to-date eCommerce app is something I'd like to knock out in the near future, though (he says, and then years go by).
